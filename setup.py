@@ -29,10 +29,10 @@ setup(
         'Programming Language :: Python',
     ],
     install_requires = requirements,
-    
+
     tests_require = ["nose", "mock"],
     test_suite = "nose.collector",
-    
+
     entry_points = {
         'console_scripts': ['cloudservers = cloudservers.shell:main']
     }

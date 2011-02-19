@@ -12,28 +12,28 @@ class IPGroup(base.Resource):
 
 class IPGroupManager(base.ManagerWithFind):
     resource_class = IPGroup
-    
+
     def list(self):
         """
         Get a list of all groups.
-        
+
         :rtype: list of :class:`IPGroup`
         """
         return self._list("/shared_ip_groups/detail", "sharedIpGroups")
-        
+
     def get(self, group):
         """
         Get an IP group.
-        
+
         :param group: ID of the image to get.
         :rtype: :class:`IPGroup`
         """
         return self._get("/shared_ip_groups/%s" % base.getid(group), "sharedIpGroup")
-    
+
     def create(self, name, server=None):
         """
         Create a new :class:`IPGroup`
-        
+
         :param name: An (arbitrary) name for the new image.
         :param server: A :class:`Server` (or its ID) to make a member of this group.
         :rtype: :class:`IPGroup`
@@ -42,11 +42,11 @@ class IPGroupManager(base.ManagerWithFind):
         if server:
             data['sharedIpGroup']['server'] = base.getid(server)
         return self._create('/shared_ip_groups', data, "sharedIpGroup")
-    
+
     def delete(self, group):
         """
         Delete a group.
-                
+
         :param group: The :class:`IPGroup` (or its ID) to delete.
         """
         self._delete("/shared_ip_groups/%s" % base.getid(group))

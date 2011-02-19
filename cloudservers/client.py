@@ -16,18 +16,18 @@ import cloudservers
 from cloudservers import exceptions
 
 class CloudServersClient(httplib2.Http):
-    
+
     AUTH_URL = 'https://auth.api.rackspacecloud.com/v1.0'
     USER_AGENT = 'python-cloudservers/%s' % cloudservers.__version__
-    
+
     def __init__(self, user, apikey):
         super(CloudServersClient, self).__init__()
         self.user = user
         self.apikey = apikey
-        
+
         self.management_url = None
         self.auth_token = None
-        
+
         # httplib2 overrides
         self.force_exception_to_status_code = True
 
@@ -37,7 +37,7 @@ class CloudServersClient(httplib2.Http):
         if 'body' in kwargs:
             kwargs['headers']['Content-Type'] = 'application/json'
             kwargs['body'] = json.dumps(kwargs['body'])
-            
+
         resp, body = super(CloudServersClient, self).request(*args, **kwargs)
         if body:
             body = json.loads(body)
@@ -71,13 +71,13 @@ class CloudServersClient(httplib2.Http):
     def get(self, url, **kwargs):
         url = self._munge_get_url(url)
         return self._cs_request(url, 'GET', **kwargs)
-    
+
     def post(self, url, **kwargs):
         return self._cs_request(url, 'POST', **kwargs)
-    
+
     def put(self, url, **kwargs):
         return self._cs_request(url, 'PUT', **kwargs)
-    
+
     def delete(self, url, **kwargs):
         return self._cs_request(url, 'DELETE', **kwargs)
 
@@ -86,11 +86,11 @@ class CloudServersClient(httplib2.Http):
         resp, body = self.request(self.AUTH_URL, 'GET', headers=headers)
         self.management_url = resp['x-server-management-url']
         self.auth_token = resp['x-auth-token']
-        
+
     def _munge_get_url(self, url):
         """
         Munge GET URLs to always return uncached content.
-        
+
         The Cloud Servers API caches data *very* agressively and doesn't respect
         cache headers. To avoid stale data, then, we append a little bit of
         nonsense onto GET parameters; this appears to force the data not to be

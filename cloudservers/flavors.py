@@ -12,19 +12,19 @@ class FlavorManager(base.ManagerWithFind):
     Manage :class:`Flavor` resources.
     """
     resource_class = Flavor
-    
+
     def list(self):
         """
         Get a list of all flavors.
-        
+
         :rtype: list of :class:`Flavor`.
         """
         return self._list("/flavors/detail", "flavors")
-        
+
     def get(self, flavor):
         """
         Get a specific flavor.
-        
+
         :param flavor: The ID of the :class:`Flavor` to get.
         :rtype: :class:`Flavor`
         """

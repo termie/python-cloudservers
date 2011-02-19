@@ -18,42 +18,42 @@ class ImageManager(base.ManagerWithFind):
     Manage :class:`Image` resources.
     """
     resource_class = Image
-    
+
     def get(self, image):
         """
         Get an image.
-        
+
         :param image: The ID of the image to get.
         :rtype: :class:`Image`
         """
         return self._get("/images/%s" % base.getid(image), "image")
-    
+
     def list(self):
         """
         Get a list of all images.
-        
+
         :rtype: list of :class:`Image`
         """
         return self._list("/images/detail", "images")
-    
+
     def create(self, name, server):
         """
         Create a new image by snapshotting a running :class:`Server`
-        
+
         :param name: An (arbitrary) name for the new image.
         :param server: The :class:`Server` (or its ID) to make a snapshot of.
         :rtype: :class:`Image`
         """
         data = {"image": {"serverId": base.getid(server), "name": name}}
         return self._create("/images", data, "image")
-        
+
     def delete(self, image):
         """
         Delete an image.
-        
-        It should go without saying that you can't delete an image 
+
+        It should go without saying that you can't delete an image
         that you didn't create.
-        
+
         :param image: The :class:`Image` (or its ID) to delete.
         """
         self._delete("/images/%s" % base.getid(image))
