@@ -29,18 +29,18 @@ Classes
 
 .. autoclass:: IPGroupManager
    :members: get, list, find, findall, create, delete
-   
+
 .. autoclass:: IPGroup
    :members: delete
-   
+
    .. attribute:: id
-   
+
         Shared group ID.
-   
+
    .. attribute:: name
-   
+
         Name of the group.
-   
+
    .. attribute:: servers
-   
+
         A list of server IDs in this group.

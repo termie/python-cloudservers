@@ -13,22 +13,22 @@ Classes
 
 .. autoclass:: BackupScheduleManager
    :members: create, delete, update, get
-   
+
 .. autoclass:: BackupSchedule
    :members: update, delete
-   
+
    .. attribute:: enabled
-   
+
         Is this backup enabled? (boolean)
-        
+
    .. attribute:: weekly
-   
+
         The day of week upon which to perform a weekly backup.
-   
+
    .. attribute:: daily
-   
+
         The daily time period during which to perform a daily backup.
-        
+
 Constants
 ---------
 
@@ -36,16 +36,16 @@ Constants for selecting weekly backup days:
 
     .. data:: BACKUP_WEEKLY_DISABLED
     .. data:: BACKUP_WEEKLY_SUNDAY
-    .. data:: BACKUP_WEEKLY_MONDAY  
-    .. data:: BACKUP_WEEKLY_TUESDAY 
+    .. data:: BACKUP_WEEKLY_MONDAY
+    .. data:: BACKUP_WEEKLY_TUESDAY
     .. data:: BACKUP_WEEKLY_WEDNESDA
     .. data:: BACKUP_WEEKLY_THURSDAY
-    .. data:: BACKUP_WEEKLY_FRIDAY  
+    .. data:: BACKUP_WEEKLY_FRIDAY
     .. data:: BACKUP_WEEKLY_SATURDAY
-    
+
 Constants for selecting hourly backup windows:
 
-    .. data:: BACKUP_DAILY_DISABLED   
+    .. data:: BACKUP_DAILY_DISABLED
     .. data:: BACKUP_DAILY_H_0000_0200
     .. data:: BACKUP_DAILY_H_0200_0400
     .. data:: BACKUP_DAILY_H_0400_0600

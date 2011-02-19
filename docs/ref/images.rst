@@ -22,33 +22,33 @@ Classes
 
 .. autoclass:: Image
    :members: delete
-      
+
    .. attribute:: id
-   
+
        This image's ID.
-       
+
    .. attribute:: name
-   
+
        This image's name.
-       
+
    .. attribute:: created
-   
+
        The date/time this image was created.
-       
+
    .. attribute:: updated
-   
+
        The date/time this instance was updated.
-       
+
    .. attribute:: status
-   
+
        The status of this image (usually ``"SAVING"`` or ``ACTIVE``).
-       
+
    .. attribute:: progress
-   
+
        During saving of an image this'll be set to something between
        0 and 100, representing a rough percentage done.
-       
+
    .. attribute:: serverId
-   
+
        If this image was created from a :class:`Server` then this attribute
        will be set to the ID of the server whence this image came.

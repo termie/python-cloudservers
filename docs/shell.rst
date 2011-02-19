@@ -30,9 +30,9 @@ For example, in Bash you'd use::
 
     export CLOUD_SERVERS_USERNAME=yourname
     export CLOUD_SERVERS_API_KEY=yadayadayada
-    
+
 From there, all shell commands take the form::
-    
+
     cloudservers <command> [arguments...]
 
 Run :program:`cloudservers help` to get a full list of all possible commands,

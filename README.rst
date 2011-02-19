@@ -35,10 +35,10 @@ them as environment variables::
 
     export CLOUD_SERVERS_USERNAME=jacobian
     export CLOUD_SERVERS_API_KEY=yadayada
-    
-You'll find complete documentation on the shell by running 
+
+You'll find complete documentation on the shell by running
 ``cloudservers help``::
-    
+
     usage: cloudservers [--username USERNAME] [--apikey APIKEY] <subcommand> ...
 
     Command-line interface to the Cloud Servers API.
@@ -81,7 +81,7 @@ You'll find complete documentation on the shell by running
       --apikey APIKEY       Defaults to env[CLOUD_SERVERS_API_KEY].
 
     See "cloudservers help COMMAND" for help on a specific command.
-    
+
 Python API
 ----------
 
@@ -98,13 +98,13 @@ By way of a quick-start::
     >>> cs.servers.list()
     [...]
     >>> s = cs.servers.create(image=2, flavor=1, name='myserver')
-    
+
     ... time passes ...
-    
+
     >>> s.reboot()
-    
+
     ... time passes ...
-    
+
     >>> s.delete()
 
 FAQ
@@ -116,7 +116,7 @@ What's wrong with libcloud?
     common denominator; I needed access to the Rackspace-specific APIs (shared
     IP groups, image snapshots, resizing, etc.). I also wanted a command-line
     utility.
-    
+
 What's new?
 -----------
 

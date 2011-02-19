@@ -3,7 +3,7 @@ The :mod:`cloudservers` Python API
 
 .. module:: cloudservers
    :synopsis: A client for the Rackspace Cloud Servers API.
-   
+
 .. currentmodule:: cloudservers
 
 Usage
@@ -17,28 +17,28 @@ First create an instance of :class:`CloudServers` with your credentials::
 Then call methods on the :class:`CloudServers` object:
 
 .. class:: CloudServers
-    
+
     .. attribute:: backup_schedules
-    
+
         A :class:`BackupScheduleManager` -- manage automatic backup images.
-    
+
     .. attribute:: flavors
-    
+
         A :class:`FlavorManager` -- query available "flavors" (hardware
         configurations).
-        
+
     .. attribute:: images
-    
+
         An :class:`ImageManager` -- query and create server disk images.
-    
+
     .. attribute:: ipgroups
-    
+
         A :class:`IPGroupManager` -- manage shared public IP addresses.
-    
+
     .. attribute:: servers
-    
+
         A :class:`ServerManager` -- start, stop, and manage virtual machines.
-    
+
     .. automethod:: authenticate
 
 For example::
@@ -63,5 +63,5 @@ For more information, see the reference:
 
 .. toctree::
    :maxdepth: 2
-   
+
    ref/index
